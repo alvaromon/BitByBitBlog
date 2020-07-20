@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogPreviewComponent } from '../blog-preview/blog-preview.component'
+import { BlogDataService } from '../services/index'
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  public previews: BlogPreviewComponent[];
+
+  constructor(private _blogDataService: BlogDataService) { }
 
   ngOnInit() {
+    this._blogDataService.getAllBlogData().subscribe(previews => this.previews = previews);
   }
 
 }
