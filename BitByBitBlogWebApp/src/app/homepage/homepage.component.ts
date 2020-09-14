@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogPreviewComponent } from '../blog-preview/blog-preview.component'
-import { BlogDataService } from '../services/index'
+import { BlogPreviewComponent } from '../blog-preview/blog-preview.component';
+import { BlogDataService } from '../services/index';
 
 @Component({
   selector: 'app-homepage',
@@ -9,12 +9,16 @@ import { BlogDataService } from '../services/index'
 })
 export class HomepageComponent implements OnInit {
 
-  public previews: BlogPreviewComponent[];
+  public previews: BlogPreviewComponent[] = [];
 
-  constructor(private _blogDataService: BlogDataService) { }
+  constructor(private _blogDataService: BlogDataService) {
+   }
 
   ngOnInit() {
-    this._blogDataService.getAllBlogData().subscribe(previews => this.previews = previews);
-  }
+    this._blogDataService._previews.forEach(element => {
+      this.previews.push(new BlogPreviewComponent(element.imgURL, element.title, element.summary));
+    });
 
+    console.log(this.previews);
+  }
 }

@@ -1,8 +1,5 @@
 https://i.ebayimg.com/images/g/DN8AAOSwAj5Z1w3i/s-l300.jpg
-
 How to Use Docker!
-
 We will discuss how to use docker, docker basics, docker for windows.
-
 Hello this is the blog text where i will eventually actually write blogs!
 

@@ -1,8 +1,5 @@
 https://uploads.toptal.io/blog/image/125395/toptal-blog-image-1518187252525-03f6db7b1c131066061024c236c7e3ff.png
-
 How to make a blog using Angular and HTML/CSS.
-
 We will discuss Project Setup, installing Angular, project structure, Angular basics, and other related topics!
-
 Hello this is the blog text where i will eventually actually write blogs!
 
