@@ -22,7 +22,7 @@ export class HomepageComponent implements OnInit {
       this.previews.push(new BlogPreviewComponent(element.imgURL, element.title, element.summary));
     });
 
-    this._blogDataService.getBlogData().forEach(element => {y
+    this._blogDataService.getBlogData().forEach(element => {
       this.previews.push(new BlogPreviewComponent(element.imgURL, element.title, element.summary));
     });
 
