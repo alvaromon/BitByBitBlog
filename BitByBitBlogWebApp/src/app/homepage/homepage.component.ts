@@ -11,20 +11,21 @@ import { BlogDataService } from '../services/index';
 export class HomepageComponent implements OnInit {
 
   public previews: BlogPreviewComponent[] = [];
-  public myArr: BlogData[] = this._blogDataService._previews;
 
   constructor(private _blogDataService: BlogDataService) {
    }
 
   ngOnInit() {
-    this._blogDataService._previews.forEach(element => {
+    const blogData = this._blogDataService.getBlogData();
+
+    this._blogDataService.getBlogData().forEach(element => {
       this.previews.push(new BlogPreviewComponent(element.imgURL, element.title, element.summary));
     });
 
-    this._blogDataService._previews.forEach(element => {
+    this._blogDataService.getBlogData().forEach(element => {y
       this.previews.push(new BlogPreviewComponent(element.imgURL, element.title, element.summary));
     });
 
-    console.log(this.previews);
+    console.log(blogData);
   }
 }

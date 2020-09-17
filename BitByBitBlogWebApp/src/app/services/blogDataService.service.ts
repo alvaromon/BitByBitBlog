@@ -11,13 +11,21 @@ export class BlogDataService {
 
     public _previews: BlogData[] = [];
 
-    constructor(private _http: HttpClient) {
+    constructor(private _http: HttpClient) {}
+
+    public getBlogData(): BlogData[]{
+        const blogData: BlogData[] = [];
+
         this._http.get('../../assets/BlogData/testblog1.txt', {responseType: 'text'}).
-        subscribe(data => this._previews.push(this.fileDataToObj(data)));
+        subscribe(data => blogData.push(this.fileDataToObj(data)));
 
         this._http.get('../../assets/BlogData/testblog2.txt', {responseType: 'text'}).
-        subscribe(data => this._previews.push(this.fileDataToObj(data)));
-     }
+        subscribe(data => blogData.push(this.fileDataToObj(data)));
+
+        this._previews = blogData;
+
+        return blogData;
+    }
 
     private fileDataToObj(data: string): BlogData {
         let obj: BlogData;
